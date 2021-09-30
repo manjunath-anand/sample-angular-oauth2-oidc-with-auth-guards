@@ -25,6 +25,12 @@ import { AuthService } from './core/auth.service';
           Admin-2
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="heroesdash/dashboard">
+          <span *ngIf="(isAuthenticated$ | async) === false">🔒</span>
+          Heroes
+        </a>
+      </li>
     </ul>
     <button class="btn btn-sm btn-default" (click)="login()" *ngIf="(isAuthenticated$ | async) === false">Log in</button>
     <span *ngIf="isAuthenticated$ | async" id="email">{{email}}</span>
